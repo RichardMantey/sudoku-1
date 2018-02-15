@@ -67,7 +67,7 @@ def test():
                 preds *= istarget #(N, 9, 9)
 
                 probs = np.reshape(probs, (-1, 9*9)) #(N, 9*9)
-                preds = np.reshape(preds, (-1, 9*9))#(N, 9*9)
+                preds = np.reshape(preds, (-1, 9*9)) #(N, 9*9)
                 
                 _preds = np.reshape(_preds, (-1, 9*9))
                 maxprob_ids = np.argmax(probs, axis=1) # (N, ) <- blanks of the most probable prediction
