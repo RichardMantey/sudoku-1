@@ -41,7 +41,7 @@ def get_batch_data():
     
     Returns:
       A Tuple of x, y, and num_batch
-        x: A `Tensor` of float. Has the shape of (batch_size, 9 , 9, 1).
+        x: A `Tensor` of float. Has the shape of (batch_size, 9, 9, 1).
         y: A `Tensor` of int. Has the shape of (batch_size, 9, 9).
         num_batch = A Python int. Number of batches.
     '''
