@@ -41,15 +41,14 @@ def get_batch_data():
     
     Returns:
       A Tuple of x, y, and num_batch
-        x: A `Tensor` of float. Has the shape of (batch_size, 9, 9, 1).
+        x: A `Tensor` of float. Has the shape of (batch_size, 9 , 9, 1).
         y: A `Tensor` of int. Has the shape of (batch_size, 9, 9).
         num_batch = A Python int. Number of batches.
     '''
     X, Y = load_data(type="train")
     
     # Create Queues
-    input_queues = tf.train.slice_input_producer([tf.convert_to_tensor(X, tf.float32), 
-                                                  tf.convert_to_tensor(Y, tf.int32)]) 
+    input_queues = tf.train.slice_input_producer([tf.convert_to_tensor(X, tf.float32), tf.convert_to_tensor(Y, tf.int32)]) 
     
     # create batch queues
     x, y = tf.train.shuffle_batch(input_queues,
