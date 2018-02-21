@@ -13,7 +13,7 @@ def load_data(type="train"):
     
     Args
       type: A string. Either `train` or `test`.
-    
+      
     Returns:
       X: A 3-D array of float. Entire quizzes. 
          Has the shape of (# total games, 9, 9) 
