@@ -21,6 +21,9 @@ def load_data(type="train"):
         Has the shape of (# total games, 9, 9)
     '''
     fpath = hp.train_fpath if type=="train" else hp.test_fpath
+    if type=="dev":
+      fpath = hp.dev_fpath
+    print(fpath)
     lines = open(fpath, 'r').read().splitlines()[1:]
     nsamples = len(lines)
     

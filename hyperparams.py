@@ -2,6 +2,7 @@ class Hyperparams:
     '''Hyper parameters'''
     # data
     train_fpath = 'data/sudoku.csv'
+    dev_fpath = 'data/sudoku_dev.csv'
     test_fpath = 'data/test.csv'
     
     # model
