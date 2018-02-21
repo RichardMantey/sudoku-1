@@ -34,7 +34,7 @@ for i in range(rows):
 	file.write(value)
 file.close()
 
-print "Done"
+# print "Done"
 
 # print quizzes.shape
 # print quizzes_flat.shape
