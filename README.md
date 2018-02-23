@@ -1,4 +1,4 @@
-## Charles and Richard branch
+## Charles and Richard's branch
 
 # Can Convolutional Neural Networks Crack Sudoku Puzzles?
 
