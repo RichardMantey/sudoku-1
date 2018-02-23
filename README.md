@@ -41,49 +41,6 @@ Accuracy is defined as
 
 Number of blanks where the prediction matched the solution / Number of blanks.
 
-## Results
-
-After a couple of hours of training, the training curve seems to reach the optimum. 
-
-<img src="fig/training_curve.png">
-I use a simple trick in inference. Instead of cracking the whole blanks all at once, I fill in a single blank where the prediction is the most probable among the all predictions. As can be seen below, my model scored 0.86 in accuracy. Details are available in the `results` folder.
-
-
- 
-| Level  |  Accuracy (#correct/#blanks=acc.) |
-| ---    |---     |
-|Easy|**47/47 = 1.00**|
-|Easy|**45/45 = 1.00**|
-|Easy|**47/47 = 1.00**|
-|Easy|**45/45 = 1.00**|
-|Easy|**47/47 = 1.00**|
-|Easy|**46/46 = 1.00**|
-|Medium|33/53 = 0.62|
-|Medium|**55/55 = 1.00**|
-|Medium|**55/55 = 1.00**|
-|Medium|**53/53 = 1.00**|
-|Medium|33/52 = 0.63|
-|Medium|51/56 = 0.91|
-|Hard|29/56 = 0.52|
-|Hard|**55/55 = 1.00**|
-|Hard|27/55 = 0.49|
-|Hard|**57/57 = 1.00**|
-|Hard|35/55 = 0.64|
-|Hard|15/56 = 0.27|
-|Expert|**56/56 = 1.00**|
-|Expert|**55/55 = 1.00**|
-|Expert|**54/54 = 1.00**|
-|Expert|**55/55 = 1.00**|
-|Expert|17/55 = 0.31|
-|Expert|**54/54 = 1.00**|
-|Evil|**50/50 = 1.00**|
-|Evil|**50/50 = 1.00**|
-|Evil|**49/49 = 1.00**|
-|Evil|28/53 = 0.53|
-|Evil|**51/51 = 1.00**|
-|Evil|**51/51 = 1.00**|
-|Total Accuracy| 1345/1568 = _0.86_|
-
 
 ## Papers that referenced this repository
 
