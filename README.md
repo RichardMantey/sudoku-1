@@ -37,10 +37,7 @@ Sudoku is a popular number puzzle that requires you to fill blanks in a 9X9 grid
 
 ## Evaluation Metric
 
-Accuracy is defined as 
-
-Number of blanks where the prediction matched the solution / Number of blanks.
-
+Accuracy is defined as: Number of blanks where the prediction matched the solution / Number of blanks.
 
 ## Papers that referenced this repository
 
