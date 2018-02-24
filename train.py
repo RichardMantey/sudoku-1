@@ -36,8 +36,8 @@ class Graph(object):
             
             # outputs        
             self.logits = conv(self.enc, 10, 1, scope="logits") # (N, 9, 9, 1)
-            self.probs = tf.reduce_max(tf.nn.softmax(self.logits), axis=-1) #( N, 9, 9)
-            self.preds = tf.to_int32(tf.arg_max(self.logits, dimension=-1)) #( N, 9, 9)
+            self.probs = tf.reduce_max(tf.nn.softmax(self.logits), axis=-1) #(N, 9, 9)
+            self.preds = tf.to_int32(tf.arg_max(self.logits, dimension=-1)) #(N, 9, 9)
             
             # accuracy
             self.hits = tf.to_float(tf.equal(self.preds, self.y)) * self.istarget
