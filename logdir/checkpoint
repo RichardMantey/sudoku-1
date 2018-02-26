@@ -1,0 +1,6 @@
+model_checkpoint_path: "model_epoch_10_gs_156230"
+all_model_checkpoint_paths: "model.ckpt-151772"
+all_model_checkpoint_paths: "model.ckpt-153023"
+all_model_checkpoint_paths: "model.ckpt-154273"
+all_model_checkpoint_paths: "model.ckpt-155524"
+all_model_checkpoint_paths: "model_epoch_10_gs_156230"
