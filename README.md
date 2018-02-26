@@ -38,11 +38,3 @@ Sudoku is a popular number puzzle that requires you to fill blanks in a 9X9 grid
 ## Evaluation Metric
 
 Accuracy is defined as: Number of blanks where the prediction matched the solution / Number of blanks.
-
-## Papers that referenced this repository
-
-  * [OptNet: Differentiable Optimization as a Layer in Neural Networks](http://proceedings.mlr.press/v70/amos17a/amos17a.pdf)
-  * [Recurrent Relational Networks for Complex Relational Reasoning](https://arxiv.org/abs/1711.08028)
-
-
-
