@@ -38,3 +38,31 @@ Sudoku is a popular number puzzle that requires you to fill blanks in a 9X9 grid
 ## Evaluation Metric
 
 Accuracy is defined as: Number of blanks where the prediction matched the solution / Number of blanks.
+
+// Improve CNN
+ - epoch nums
+ - filter size
+ - regularization
+ - dropout
+ - more tainining data (medium, hard, expert, evil)
+
+// Search Problem
+ - Use prob distributions in heuristic search
+
+// RNN (Bidirectional with LSTM cells)
+ - list of tuples (blank_cell, num_hints) where num_hints = sum of hints in row,col,square
+ - sort list by num_hints
+ - feed in row, col, sqaure of cell with highest num_hints to RNN
+ - take joint prob for cell as solution
+ - update board with prediction
+ - recompute list with newly predicted cell
+ - choose new largest num_hints cell and continue
+ - (build structure)
+
+// Deep RL
+ - very difficult
+ - we have structure for it though
+
+Visualization
+expected board --> our board
+
