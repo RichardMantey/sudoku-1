@@ -24,7 +24,7 @@ def load_data(type="train"):
     if type=="dev":
       fpath = hp.dev_fpath
     print(fpath)
-    lines = open(fpath, 'r').read().splitlines()[1:]
+    lines = open(fpath, 'r').read().splitlines()[1:100]
     nsamples = len(lines)
     
     X = np.zeros((nsamples, 9*9), np.float32)  
@@ -37,6 +37,7 @@ def load_data(type="train"):
     
     X = np.reshape(X, (-1, 9, 9))
     Y = np.reshape(Y, (-1, 9, 9))
+    print(len(X), X[0], Y[0])
     return X, Y
         
 def get_batch_data():
@@ -64,3 +65,5 @@ def get_batch_data():
     num_batch = len(X) // hp.batch_size 
     
     return x, y, num_batch  # (N, 9, 9), (N, 9, 9), ()
+
+load_data()
