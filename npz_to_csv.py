@@ -27,6 +27,8 @@ cols = quizzes_flat.shape[1]
 
 file = open("data/sudoku.csv", "w")
 file1 = open("data/sudoku_dev.csv", "w")
+file.write("quizzes,solutions\n");
+file1.write("quizzes,solutions\n");
 for i in range(rows):
 	quiz_str = str(quizzes_flat[i,])[1:-1].replace(" ", "").replace('\n', "")
 	soln_str = str(solutions_flat[i,])[1:-1].replace(" ", "").replace('\n', "")
