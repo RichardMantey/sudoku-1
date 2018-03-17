@@ -68,3 +68,19 @@ Accuracy is defined as: Number of blanks where the prediction matched the soluti
 Visualization
 expected board --> our board
 
+// Input should now be probability distribution
+ - lets make it all one-hot
+ - back to 9 labels
+ - 0 has equal probability for all labels
+ 
+ bi - directional lstm
+ go across the row, column, square as individual inputs to the lstm
+ each pos in row x batch x 
+
+only do softmax at end
+
+feed forward layer to translate the outputs of row, col, sqaure (features) to softmax probability
+feed forward to softmax layer
+
+becomes probabilities after loss
+combine 3 outputs then feed forward then loss
