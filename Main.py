@@ -216,7 +216,7 @@ class SudokuDataset(Dataset):
         
         print(fpath)
         lines = open(fpath, 'r').read().splitlines()[1:]
-        nsamples = 5000
+        nsamples = 2000
 
         X = np.zeros((nsamples, 9*9), np.float32)  
         Y = np.zeros((nsamples, 9*9), np.int32) 
@@ -250,7 +250,7 @@ class SudokuDataset(Dataset):
 if __name__=='__main__':
     
     ## parameter setting
-    epochs = 100
+    epochs = 50
     batch_size = 1
     use_gpu = torch.cuda.is_available()
     learning_rate = 0.001
@@ -258,7 +258,7 @@ if __name__=='__main__':
     input_dim = 9
     hidden_dim = 200
     n_label = 9
-    n_layers = 5
+    n_layers = 3
     
     train_path = os.path.join(DATA_DIR, TRAIN_FILE)
     test_path = os.path.join(DATA_DIR, TEST_FILE)
@@ -287,11 +287,6 @@ if __name__=='__main__':
     test_acc_ = []
     
     
-    def adjust_learning_rate(optimizer, epoch):
-        lr = learning_rate * (0.1 ** (epoch // 10))
-        for param_group in optimizer.param_groups:
-            param_group['lr'] = lr
-        return optimizer
     
 #     import pdb
 ### training procedure
@@ -305,7 +300,7 @@ if __name__=='__main__':
 
 #         model.hidden = model.init_hidden()
 
-        for i, traindata in zip(tqdm(range(5000)), train_loader):
+        for i, traindata in zip(tqdm(range(2000)), train_loader):
             model.zero_grad()
             train_inputs_raw, train_labels_raw = traindata
 #             print(train_inputs_raw.shape)
@@ -346,7 +341,7 @@ if __name__=='__main__':
         print('[Epoch: %3d/%3d] Training Loss: %.3f, Training Acc: %.3f' 
                   % (epoch, epochs, np.mean(train_loss_), np.mean (train_acc_)))
     
-    torch.save(model.state_dict(), save_filepath)
+        torch.save(model.state_dict(), save_filepath+'_'+epoch)
 
     #Later to restore:
 #     model.load_state_dict(torch.load(save_filepath))
