@@ -207,6 +207,8 @@ TRAIN_FILE = 'kaggle_sudoku.csv'
 TEST_FILE = 'sudoku_test.txt'
 TRAIN_LABEL = 'train_label.txt'
 TEST_LABEL = 'test_label.txt'
+MODULES_DIR = 'saved_modules'
+MODULE_LABEL = 'rnn.pt'
 
 
 # In[58]:
@@ -262,7 +264,7 @@ if __name__=='__main__':
     
     train_path = os.path.join(DATA_DIR, TRAIN_FILE)
     test_path = os.path.join(DATA_DIR, TEST_FILE)
-    save_filepath = 'rnn.pt'
+    save_filepath = os.path.join(MODULES_DIR, MODULE_LABEL)
 
 
      ### ********************create model**************************
@@ -314,7 +316,7 @@ if __name__=='__main__':
             row_tensor, col_tensor, square_tensor = input_grid.getInput()
 
             if use_gpu:
-                row_tensor, col_tensor, square_tensor, train_labels =                         row_tensor.cuda(), col_tensor.cuda(), square_tensor.cuda(), train_labels.cuda()
+                row_tensor, col_tensor, square_tensor, train_labels = row_tensor.cuda(), col_tensor.cuda(), square_tensor.cuda(), train_labels.cuda()
 
             model.hidden = model.init_hidden()
             model.batch_size =  batch_size 
@@ -341,7 +343,7 @@ if __name__=='__main__':
         print('[Epoch: %3d/%3d] Training Loss: %.3f, Training Acc: %.3f' 
                   % (epoch, epochs, np.mean(train_loss_), np.mean (train_acc_)))
     
-        torch.save(model.state_dict(), save_filepath+'_'+epoch)
+        torch.save(model.state_dict(), save_filepath+'_'+str(epoch))
 
     #Later to restore:
 #     model.load_state_dict(torch.load(save_filepath))
