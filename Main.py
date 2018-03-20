@@ -250,7 +250,7 @@ class SudokuDataset(Dataset):
 if __name__=='__main__':
     
     ## parameter setting
-    epochs = 1
+    epochs = 100
     batch_size = 1
     use_gpu = torch.cuda.is_available()
     learning_rate = 0.001
@@ -258,7 +258,7 @@ if __name__=='__main__':
     input_dim = 9
     hidden_dim = 200
     n_label = 9
-    n_layers = 3
+    n_layers = 5
     
     train_path = os.path.join(DATA_DIR, TRAIN_FILE)
     test_path = os.path.join(DATA_DIR, TEST_FILE)
