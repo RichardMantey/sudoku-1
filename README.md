@@ -75,7 +75,7 @@ expected board --> our board
  
  bi - directional lstm
  go across the row, column, square as individual inputs to the lstm
- each pos in row x batch x 
+ each pos in row x batch x num_entries
 
 only do softmax at end
 
@@ -84,3 +84,36 @@ feed forward to softmax layer
 
 becomes probabilities after loss
 combine 3 outputs then feed forward then loss
+
+
+num_epochs:
+ - 3: 74
+ - 5: 76
+ - 10: 78
+
+num_filters:
+ - 3: 72
+ - 6: 71
+ - 9: OOM
+
+num_blocks:
+ - 10: 72
+ - 12: 74
+ - 15: 81
+ - 18: 78
+ - 20: 74
+
+ dropout:
+  - 0.2: 66
+  - 0.05: 77
+
+ l2:
+  - 0.0001: 74
+  - 0.001: 77
+  - 0.002: 73
+  - 0.01: 65
+
+
+
+
+
